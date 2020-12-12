@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-
+from models.models import YarukotoList
 app = Flask(__name__)
 
 
@@ -7,15 +7,15 @@ app = Flask(__name__)
 @app.route("/index")
 def index():
     name = request.args.get("name")
-    yarukoto = ["プログラミング","卒論","美容院","ランニング"]
-    return render_template("index.html",name=name,yarukoto=yarukoto)
+    all_yarukoto = YarukotoList.query.all()
+    return render_template("index.html",name=name,all_yarukoto=all_yarukoto)
 
 
 @app.route("/index",methods=["post"])
 def post():
     name = request.form["name"]
-    yarukoto = ["プログラミング","卒論","美容院","ランニング"]
-    return render_template("index.html",name=name,yarukoto=yarukoto)
+    all_yarukoto = YarukotoList.query.all()
+    return render_template("index.html",name=name,all_yarukoto=all_yarukoto)
 
 
 

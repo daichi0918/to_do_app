@@ -10,8 +10,8 @@
 	<input type="submit" value="追加">
     </form>
     <img src="/static/images/promise.jpg" alt="名言"width='400'height='300'>
-    {% for word in yarukoto %}
-    <p>{{word}}</p>
+    {% for yarukoto in all_yarukoto %}
+    <p>{{yarukoto.title}}:{{yarukoto.body}}</p>
     {% endfor %}
     </body>
 </html>
