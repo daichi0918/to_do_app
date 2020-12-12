@@ -11,5 +11,13 @@ def index():
     return render_template("index.html",name=name,yarukoto=yarukoto)
 
 
+@app.route("/index",methods=["post"])
+def post():
+    name = request.form["name"]
+    yarukoto = ["プログラミング","卒論","美容院","ランニング"]
+    return render_template("index.html",name=name,yarukoto=yarukoto)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)

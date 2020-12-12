@@ -5,6 +5,10 @@
     </head>
     <body>
     <h1>To do リスト</h1>
+    <form action"=index" method="POST">
+	<input type="text" name="name" placeholder="Enter name">
+	<input type="submit" value="追加">
+    </form>
     <img src="/static/images/promise.jpg" alt="名言"width='400'height='300'>
     {% for word in yarukoto %}
     <p>{{word}}</p>
