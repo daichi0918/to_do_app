@@ -6,5 +6,8 @@
     <body>
     <h1>To do リスト</h1>
     <img src="/static/images/promise.jpg" alt="名言"width='400'height='300'>
+    {% for word in yarukoto %}
+    <p>{{word}}</p>
+    {% endfor %}
     </body>
 </html>
