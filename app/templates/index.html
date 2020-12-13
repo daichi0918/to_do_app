@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>{{name}}</title>
+      <title>to_do_app</title>
     </head>
     <body>
     <h1>To do リスト</h1>
-    <form action"=index" method="POST">
-	<input type="text" name="name" placeholder="Enter name">
-	<input type="submit" value="追加">
-    </form>
     <img src="/static/images/promise.jpg" alt="名言"width='400'height='300'>
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="detail">
+        <input type="submit" value="追加">
+    </form>
+    <form action="/delete" method="post" id="delete">
+        <input type="submit" value="Delete Selected All List">
+    </form>
     {% for yarukoto in all_yarukoto %}
-    <p>{{yarukoto.title}}:{{yarukoto.body}}</p>
+    <div>
+       <input type="checkbox" name="delete" form="delete" value={{yarukoto.id}}>
+       {{yarukoto.title}}：{{yarukoto.body}}
+    </div>
     {% endfor %}
     </body>
 </html>
