@@ -2,6 +2,17 @@
 <html>
     <head>
       <title>to_do_app</title>
+      <script type="text/javascript">
+      function Check(){
+	var checked = confirm("本当に削除しますか")
+	if (checked == true) {
+           return true;
+	 }
+      else{
+           return false;
+        } 
+     }
+      </script>
     </head>
     <body>
     <h1>To do リスト</h1>
@@ -17,7 +28,7 @@
         <input type="submit" value="更新">
     </form>
     <form action="/delete" method="post" id="delete">
-        <input type="submit" value="Delete Selected All List">
+        <input type="submit" value="Delete Selected All Listi"onClick="return Check()">
     </form>
     {% for yarukoto in all_yarukoto %}
     <div>
