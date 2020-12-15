@@ -11,11 +11,17 @@
         <input type="text" name="body" placeholder="detail">
         <input type="submit" value="追加">
     </form>
+     <form action="/update" method="post" id="update">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="detail">
+        <input type="submit" value="更新">
+    </form>
     <form action="/delete" method="post" id="delete">
         <input type="submit" value="Delete Selected All List">
     </form>
     {% for yarukoto in all_yarukoto %}
     <div>
+       <input type="radio" name="update" form="update" value={{yarukoto.id}}>
        <input type="checkbox" name="delete" form="delete" value={{yarukoto.id}}>
        {{yarukoto.title}}：{{yarukoto.body}}
     </div>

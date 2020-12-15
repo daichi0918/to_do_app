@@ -26,6 +26,13 @@ def add():
     db_session.add(content)
     db_session.commit()
     return index()
+@app.route("/update",methods=["post"])
+def update():
+    content = YarukotoList.query.filter_by(id=request.form["update"]).first()
+    content.title = request.form["title"]
+    content.body = request.form["body"]
+    db_session.commit()
+    return index()
 
 @app.route("/delete",methods=["post"])
 def delete():
