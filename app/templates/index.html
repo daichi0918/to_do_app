@@ -25,16 +25,16 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <form action="/add" method="post">
         <input type="text" name="title" placeholder="title">
         <input type="text" name="body" placeholder="detail">
-        <input  type="submit" value="追加"class="btn btn-primary">    
+        <input  type="submit" value="追加"class="btn btn-outline-primary"> 
   </div>
     </form>
      <form action="/update" method="post" id="update">
         <input type="text" name="title" placeholder="title">
         <input type="text" name="body" placeholder="detail">
-        <input  type="submit" value="更新"class="btn btn-primary">    
+        <input  type="submit" value="更新"class="btn btn-outline-success">  
      </form>
     <form action="/delete" method="post" id="delete">
-        <input type="submit" value="Delete Selected All Listi"onClick="return Check()">
+        <input type="submit"class = "btn btn-outline-danger" value="Delete Selected All List"onClick="return Check()">
     </form>
     {% for yarukoto in all_yarukoto %}
     <div>
