@@ -42,13 +42,14 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     </form>
     {% for yarukoto in all_yarukoto %}
     <div>
-<td align="center">       
+<center>
 <input type="radio" name="update" form="update" value={{yarukoto.id}}>
 <input type="checkbox" name="delete" form="delete" value={{yarukoto.id}}>
 
        {{yarukoto.title}}：{{yarukoto.body}}
-    </div>
-</td>
+</center>    
+</div>
+
     {% endfor %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
