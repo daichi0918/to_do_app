@@ -18,7 +18,9 @@ h1{
 text-align:center;
 }
 body{
-background-image:url(/static/images/background.jpg);
+background-image:url(/static/images/images.jpeg);
+background-size:cover;
+padding-top:300px
 }
 </style>
 <link rel="stylesheet"
@@ -30,35 +32,30 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <div class="row">
     <h1 class="col-sm">
     </h1>
-    <h1 style="color:blue" class="col-sm" class="text-center">
+    <h1 style="color:white" class="col-sm" class="text-center">
    To do リスト 
    </h1>
     <h1 class="col-sm">
     </h1>
   </div>
 </div>
-    <div class="row">
-      <div class="col">
-        <img class="mx-auto d-block" src="/static/images/promise.jpg" alt="名言"width='400'height='300'>
-      </div>
-    </div>
     <form action="/add" method="post" class="form-inline justify-content-center">
         <input type="text" name="title" placeholder="title">
         <input type="text" name="body" placeholder="detail">
-        <input  type="submit" value="追加"class="btn btn-outline-primary"> 
+        <input  type="submit" value="Add"class="btn btn-outline-primary"> 
   </div>
     </form>
      <form action="/update" method="post" id="update" class="form-inline justify-content-center">
         <input type="text" name="title" placeholder="title">
         <input type="text" name="body" placeholder="detail">
-        <input  type="submit" value="更新"class="btn btn-outline-success">  
+        <input  type="submit" value="Update"class="btn btn-outline-success">  
      </form>
     <form action="/delete" method="post" id="delete"class="form-inline justify-content-center">
         <input type="submit"class = "btn btn-outline-danger" value="Delete Selected All List"onClick="return Check()">
     </form>
     {% for yarukoto in all_yarukoto %}
     <div>
-<center>
+<center style="color:white">
 <input type="radio" name="update" form="update" value={{yarukoto.id}}>
 <input type="checkbox" name="delete" form="delete" value={{yarukoto.id}}>
 
